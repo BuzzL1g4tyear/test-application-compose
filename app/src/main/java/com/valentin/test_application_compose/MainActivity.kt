@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImage(
+                    FinalView(
                         title = stringResource(R.string.first),
                         message = stringResource(R.string.second),
                     )
@@ -45,7 +46,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(modifier: Modifier = Modifier, title: String, message: String) {
+fun PartView(modifier: Modifier = Modifier, title: String, message: String) {
     Column(
         modifier = modifier
     ) {
@@ -60,16 +61,15 @@ fun GreetingText(modifier: Modifier = Modifier, title: String, message: String) 
             text = message,
             fontSize = 16.sp,
 
-        )
+            )
     }
 }
 
 @Composable
-fun GreetingImage(
+fun FinalView(
     modifier: Modifier = Modifier,
     title: String,
-    message: String,
-    image: Painter = painterResource(R.drawable.ic_task_completed)
+    message: String
 ) {
     Column(
         modifier = Modifier
@@ -78,15 +78,13 @@ fun GreetingImage(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = image,
-            contentDescription = "background"
-        )
 
-        GreetingText(
-            title = title,
-            message = message
-        )
+        Row {
+            PartView(
+                title = title,
+                message = message
+            )
+        }
     }
 }
 
