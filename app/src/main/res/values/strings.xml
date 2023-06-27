@@ -2,4 +2,6 @@
     <string name="app_name">test-application-compose</string>
     <string name="hello_world">Hello, world!</string>
     <string name="from">Valentin</string>
+    <string name="first">All tasks completed</string>
+    <string name="second">Nice work!</string>
 </resources>
